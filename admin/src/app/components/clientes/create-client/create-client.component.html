@@ -1,0 +1,99 @@
+<app-sidebar></app-sidebar>
+
+<div class="border-bottom pt-5 mt-2 mb-5">
+  <h1 class="mt-2 mt-md-4 mb-3 pt-5">Clientes</h1>
+  <div class="d-flex flex-wrap flex-md-nowrap justify-content-between">
+  </div>
+</div>
+
+<div class="card box-shadow-sm">
+  <div class="card-header bg-dark">
+    <h5 class="text-white" style="margin-bottom: 0px">Registro de cliente</h5>
+  </div>
+  <form #registroForm="ngForm" (ngSubmit)="(registroCliente(registroForm))">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-4 form-group">
+          <label for="validationCustom01" class="form-label">Nombres</label>
+          <input
+            class="form-control"
+            name="first_name"
+            [(ngModel)]="cliente.first_name"
+            type="text"
+            placeholder="Nombres"
+            required
+          />
+        </div>
+        <div class="col-md-4 form-group">
+          <label for="validationCustom01" class="form-label">Apellidos</label>
+          <input
+            class="form-control"
+            name="last_name"
+            [(ngModel)]="cliente.last_name"
+            type="text"
+            placeholder="Apellidos"
+            required
+          />
+        </div>
+        <div class="col-md-4 form-group">
+          <label for="validationCustom01" class="form-label"
+            >Correo electrónico</label
+          >
+          <input
+            class="form-control"
+            name="email"
+            [(ngModel)]="cliente.email"
+            type="text"
+            placeholder="email"
+            required
+          />
+        </div>
+
+        <div class="col-md-4 form-group">
+          <label for="validationCustom01" class="form-label">Telefono</label>
+          <input
+            class="form-control"
+            name="tel"
+            [(ngModel)]="cliente.tel"
+            type="text"
+            placeholder="telefono"
+            required
+          />
+        </div>
+        <div class="col-md-4 form-group">
+          <label for="validationCustom01" class="form-label"
+            >Fecha nacimiento</label
+          >
+          <input
+            class="form-control"
+            name="birthday"
+            [(ngModel)]="cliente.birthday"
+            type="date"
+            placeholder=""
+            required
+          />
+        </div>
+
+        <div class="col-md-4">
+          <label for="validationCustom01" class="form-label">Genero</label>
+          <select
+            class="form-control custom-select"
+            name="gender"
+            [(ngModel)]="cliente.gender"
+            required
+          >
+            <option value="" selected disabled>Seleccionar</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <button class="mr-3 btn btn-primary">Crear cliente</button>
+      <button [routerLink]="['/panel/clientes']" class="btn btn-warning">
+        Regresar
+      </button>
+    </div>
+  </form>
+</div>
